@@ -12,7 +12,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../Test%20Automation/">
+        <link rel="next" href="../UML-Class-Diagram-Library-Resource-Management-System/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -298,45 +298,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#process-flow" class="md-nav__link">
+  <a href="#implemented-methodology" class="md-nav__link">
     <span class="md-ellipsis">
-      Process Flow
+      Implemented Methodology
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#diagram" class="md-nav__link">
+  <a href="#methodologies-not-implemented" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram
+      Methodologies Not Implemented
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-details" class="md-nav__link">
+  <a href="#pros-and-cons-of-the-current-methodology" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration Details
+      Pros and Cons of the Current Methodology
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#challenges-and-solutions" class="md-nav__link">
+  <a href="#detailed-flowchart-description" class="md-nav__link">
     <span class="md-ellipsis">
-      Challenges and Solutions
+      Detailed Flowchart Description
     </span>
   </a>
   
@@ -355,28 +355,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Test%20Automation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Test Automation
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -428,45 +406,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#process-flow" class="md-nav__link">
+  <a href="#implemented-methodology" class="md-nav__link">
     <span class="md-ellipsis">
-      Process Flow
+      Implemented Methodology
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#diagram" class="md-nav__link">
+  <a href="#methodologies-not-implemented" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram
+      Methodologies Not Implemented
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-details" class="md-nav__link">
+  <a href="#pros-and-cons-of-the-current-methodology" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration Details
+      Pros and Cons of the Current Methodology
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#challenges-and-solutions" class="md-nav__link">
+  <a href="#detailed-flowchart-description" class="md-nav__link">
     <span class="md-ellipsis">
-      Challenges and Solutions
+      Detailed Flowchart Description
     </span>
   </a>
   
@@ -499,46 +477,217 @@
 
   <h1>Methodology for Publishing Obsidian Notes with MkDocs and GitHub Pages</h1>
 
-<p>This document describes the methodology used to publish notes from an Obsidian vault to a static site hosted on GitHub Pages, using MkDocs for site generation and automation scripts for synchronization.</p>
-<h2 id="overview">Overview</h2>
+<h4 id="introduction">Introduction</h4>
+<p>The goal of this system is to transform a personal collection of Markdown-based notes, managed within an Obsidian vault, into a publicly accessible static website hosted on GitHub Pages. This approach leverages Obsidian's powerful note-taking capabilities, MkDocs' static site generation features, and GitHub Pages' free hosting infrastructure to create a streamlined publication pipeline. The system is designed to be lightweight, maintainable, and tailored to individual use, while ensuring the notes remain organized and visually appealing online.</p>
+<h4 id="implemented-methodology">Implemented Methodology</h4>
+<p>The current methodology relies on a combination of local file management, shell scripts, and Git-based deployment. Below is an exhaustive breakdown of each component and step involved:</p>
 <ul>
-<li><strong>Obsidian Vault</strong>: Located at <code>/Users/rauros/Publish</code>, contains Markdown notes and images.</li>
-<li><strong>MkDocs Project</strong>: Located at <code>/Users/rauros/Publish/mkdocs-site</code>, configured to generate a static site from the notes.</li>
-<li><strong>GitHub Repository</strong>: <code>rauros.github.io</code>, where the generated site is pushed and served via GitHub Pages.</li>
-<li><strong>Automation</strong>: A script (<code>watch.sh</code>) runs <code>publish.sh</code> to copy notes, build the site, and push to GitHub.</li>
+<li><strong>Obsidian Vault Setup</strong>:<ul>
+<li><strong>Location</strong>: The vault resides at /Users/rauros/Publish, a directory containing all Markdown (.md) files and associated assets (e.g., images in .png, .jpg, or .gif formats).</li>
+<li><strong>Structure</strong>: Notes are organized into folders based on topics (e.g., "Work", "Personal", "Projects"), with a flat hierarchy to simplify file copying.</li>
+<li><strong>Content</strong>: Each note is written in Markdown, adhering to standard syntax, with occasional use of Obsidian-specific features like ![[image]] for embedded images (manually adjusted for MkDocs compatibility).</li>
 </ul>
-<h2 id="process-flow">Process Flow</h2>
-<ol>
-<li><strong>Edit Notes</strong>: Notes are edited in Obsidian.</li>
-<li><strong>Run <code>watch.sh</code></strong>: Executes <code>publish.sh</code> to:</li>
-<li>Copy Markdown notes and images from the vault to <code>/Users/rauros/Publish/mkdocs-site/docs</code>.</li>
-<li>Build the site using MkDocs.</li>
-<li>Commit and push the generated site to the <code>rauros.github.io</code> repository.</li>
-<li><strong>GitHub Pages</strong>: Serves the site at <code>https://rauros94.github.io/</code>.</li>
+</li>
+<li><strong>MkDocs Project Configuration</strong>:<ul>
+<li><strong>Location</strong>: A separate directory at /Users/rauros/Publish/mkdocs-site serves as the MkDocs project root.</li>
+<li><strong>Key Files</strong>:<ul>
+<li>mkdocs.yml: The configuration file specifying site metadata (e.g., site_name: My Notes), the theme (material), and navigation structure.</li>
+<li>docs/: A subdirectory where Markdown files and assets are copied from the vault for site generation.</li>
+<li>site/: The output directory where MkDocs generates the static HTML files.</li>
+</ul>
+</li>
+<li><strong>Theme Customization</strong>: The "Material for MkDocs" theme is used, configured with a dark mode toggle, custom colors (e.g., primary color set to indigo), and plugins like search for site-wide search functionality.</li>
+</ul>
+</li>
+<li><strong>Automation Workflow</strong>:<ul>
+<li><strong>Scripts Overview</strong>:<ul>
+<li><strong>watch.sh</strong>: A simple shell script acting as the entry point for publication. It invokes publish.sh once, rather than running in a continuous loop, to avoid unnecessary resource usage.</li>
+<li><strong>publish.sh</strong>: The core script handling the end-to-end publication process.</li>
+</ul>
+</li>
+<li><strong>Detailed Steps in publish.sh</strong>:<ol>
+<li><strong>File Synchronization</strong>:<ul>
+<li>Command: cp -r /Users/rauros/Publish/*.md /Users/rauros/Publish/mkdocs-site/docs/</li>
+<li>Command: cp -r /Users/rauros/Publish/images/* /Users/rauros/Publish/mkdocs-site/docs/images/</li>
+<li>Copies all .md files and the images/ folder to the docs/ directory, overwriting existing files to ensure the latest versions are used.</li>
+</ul>
+</li>
+<li><strong>Site Generation</strong>:<ul>
+<li>Command: mkdocs build --clean</li>
+<li>Runs MkDocs to generate a fresh static site in the site/ directory, clearing any previous build artifacts.</li>
+</ul>
+</li>
+<li><strong>Git Operations</strong>:<ul>
+<li>cd /Users/rauros/Publish/mkdocs-site</li>
+<li>git add .: Stages all changes in the MkDocs project directory.</li>
+<li>git commit -m "Update site with latest notes": Commits the changes with a descriptive message.</li>
+<li>git push origin main: Pushes the updates to the main branch of the rauros.github.io repository.</li>
+</ul>
+</li>
 </ol>
-<h2 id="diagram">Diagram</h2>
-<p>Below is a flowchart illustrating the process:</p>
-<pre><code class="language-mermaid">graph TD
-    A[Edit Notes in Obsidian] --&gt; B[Run watch.sh]
-    B --&gt; C[Execute publish.sh]
-    C --&gt; D[Copy Notes to MkDocs docs/]
-    C --&gt; E[Build Site with MkDocs]
-    C --&gt; F[Push to GitHub Repository]
-    F --&gt; G[Site Published on GitHub Pages]
-</code></pre>
-<h2 id="configuration-details">Configuration Details</h2>
-<ul>
-<li><strong>MkDocs Theme</strong>: Material for MkDocs with dark mode enabled.</li>
-<li><strong>Automation</strong>: watch.sh executes publish.sh to automate the process.</li>
-<li><strong>GitHub Actions</strong>: Not used; local scripts handle the automation.</li>
+</li>
+<li><strong>Execution</strong>: The user manually runs watch.sh from the terminal (e.g., bash watch.sh), triggering the entire process.</li>
 </ul>
-<h2 id="challenges-and-solutions">Challenges and Solutions</h2>
-<ul>
-<li><strong>Continuous Push Loop</strong>: Initially, fswatch caused infinite loops due to detecting temporary files. Solved by excluding irrelevant directories and files.</li>
-<li><strong>Configuration Errors</strong>: Resolved by consolidating mkdocs.yml and ensuring correct paths.</li>
+</li>
+<li><strong>GitHub Pages Deployment</strong>:<ul>
+<li><strong>Repository</strong>: rauros.github.io, a public GitHub repository configured to serve content from the main branch.</li>
+<li><strong>Hosting</strong>: GitHub Pages automatically detects the static files in the site/ directory and deploys them to https://rauros.github.io.</li>
 </ul>
-<h2 id="conclusion">Conclusion</h2>
-<p>This methodology provides a simple, automated way to publish Obsidian notes to a static site, ensuring that changes are reflected quickly and efficiently.</p>
+</li>
+</ul>
+<p><strong>Technical Nuances</strong>:</p>
+<ul>
+<li><strong>File Paths</strong>: Absolute paths are used in scripts for reliability, assuming a fixed local setup.</li>
+<li><strong>MkDocs Plugins</strong>: The mkdocs-material plugin enables features like instant page loading and code highlighting.</li>
+<li><strong>Error Handling</strong>: Basic error checking (e.g., verifying directory existence) is minimal, relying on manual troubleshooting if issues arise.</li>
+</ul>
+<h4 id="methodologies-not-implemented">Methodologies Not Implemented</h4>
+<p>Several alternative approaches were evaluated but ultimately not adopted. Below is a detailed exploration of each, including why they were rejected:</p>
+<ol>
+<li><strong>Obsidian Git Plugin</strong>:<ul>
+<li><strong>Description</strong>: This plugin integrates Git directly into Obsidian, enabling automatic commits and pushes of vault changes to a repository.</li>
+<li><strong>Implementation Details</strong>:<ul>
+<li>Requires installing the plugin via Obsidian’s community plugin marketplace.</li>
+<li>Configures a Git repository within the vault directory (/Users/rauros/Publish).</li>
+<li>Supports scheduling commits (e.g., every 5 minutes) and pushing to a remote like GitHub.</li>
+</ul>
+</li>
+<li><strong>Reasons for Not Implementing</strong>:<ul>
+<li><strong>Redundancy</strong>: The vault would need its own repository separate from rauros.github.io, complicating synchronization with the MkDocs site.</li>
+<li><strong>Control</strong>: Automatic commits could push incomplete notes, requiring additional configuration (e.g., .gitignore for drafts).</li>
+<li><strong>Learning Curve</strong>: Setting up SSH keys or Git credentials within Obsidian adds complexity for a simple use case.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>GitHub Actions Workflow</strong>:<ul>
+<li><strong>Description</strong>: A CI/CD pipeline using GitHub Actions to automate site building and deployment directly from the vault’s repository.</li>
+<li><strong>Implementation Details</strong>:<ul>
+<li>Create a .github/workflows/publish.yml file in a vault repository.</li>
+<li>Define steps: checkout vault code, install MkDocs, copy files, build the site, and deploy to GitHub Pages.</li>
+<li>Trigger on push events to the vault repository.</li>
+</ul>
+</li>
+<li><strong>Reasons for Not Implementing</strong>:<ul>
+<li><strong>Dependency Overhead</strong>: Requires maintaining Python and MkDocs in the cloud, plus managing GitHub secrets for authentication.</li>
+<li><strong>Loss of Local Control</strong>: Moves the process to a remote server, reducing visibility into build failures.</li>
+<li><strong>Setup Complexity</strong>: Writing and debugging YAML workflows demands more effort than local scripts.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Continuous Integration Tools (e.g., Jenkins, Travis CI)</strong>:<ul>
+<li><strong>Description</strong>: Enterprise-grade CI tools to monitor the vault, build the site, and deploy it automatically.</li>
+<li><strong>Implementation Details</strong>:<ul>
+<li>Install Jenkins locally or on a server.</li>
+<li>Configure a job to watch /Users/rauros/Publish, run MkDocs, and push to GitHub.</li>
+<li>Use webhooks or polling to detect changes.</li>
+</ul>
+</li>
+<li><strong>Reasons for Not Implementing</strong>:<ul>
+<li><strong>Overkill</strong>: These tools are designed for large teams and complex projects, not a single-user notes site.</li>
+<li><strong>Resource Intensive</strong>: Running a CI server locally consumes significant CPU and memory.</li>
+<li><strong>Maintenance</strong>: Requires ongoing updates and configuration, outweighing the benefits for this scope.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Custom Python Script with Watchdog</strong>:<ul>
+<li><strong>Description</strong>: A Python script using the watchdog library to monitor the vault for changes and trigger publication automatically.</li>
+<li><strong>Implementation Details</strong>:<ul>
+<li>Install watchdog via pip install watchdog.</li>
+<li>Write a script to detect file modifications, copy files, and run mkdocs build.</li>
+<li>Integrate with Git for commits and pushes.</li>
+</ul>
+</li>
+<li><strong>Reasons for Not Implementing</strong>:<ul>
+<li><strong>Development Time</strong>: Building and testing a custom solution takes longer than adapting existing shell scripts.</li>
+<li><strong>Reliability</strong>: File system watchers can miss events or trigger excessively, requiring debouncing logic.</li>
+<li><strong>Dependency</strong>: Adds Python as a dependency, whereas the current setup only needs bash and Git.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="pros-and-cons-of-the-current-methodology">Pros and Cons of the Current Methodology</h4>
+<p>The implemented approach has distinct strengths and weaknesses, analyzed in depth below:</p>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li><strong>Simplicity</strong>:<ul>
+<li>Uses basic shell commands (cp, git) and MkDocs, requiring minimal setup beyond initial configuration.</li>
+<li>Easy to understand and modify without advanced programming knowledge.</li>
+</ul>
+</li>
+<li><strong>Local Control</strong>:<ul>
+<li>All operations run on the user’s machine, allowing immediate feedback and manual intervention if needed.</li>
+<li>No reliance on external servers or internet connectivity during the build phase.</li>
+</ul>
+</li>
+<li><strong>Flexibility</strong>:<ul>
+<li>The process can be adapted to include new file types or directories by tweaking publish.sh.</li>
+<li>Works with any GitHub Pages-compatible static site generator, not just MkDocs.</li>
+</ul>
+</li>
+<li><strong>Low Overhead</strong>:<ul>
+<li>No additional software beyond Obsidian, MkDocs, Git, and a terminal, keeping the system lightweight.</li>
+</ul>
+</li>
+<li><strong>Cost-Free</strong>:<ul>
+<li>Leverages free tools and GitHub’s hosting, avoiding subscription or server costs.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li><strong>Manual Execution</strong>:<ul>
+<li>Requires running watch.sh manually, lacking true automation (e.g., no real-time change detection).</li>
+<li>Could be mitigated by scheduling via cron, but this isn’t currently implemented.</li>
+</ul>
+</li>
+<li><strong>Scalability Limits</strong>:<ul>
+<li>Copying all files every time (cp -r) becomes inefficient as the vault grows (e.g., hundreds of notes or large image folders).</li>
+<li>No incremental updates—each build regenerates the entire site.</li>
+</ul>
+</li>
+<li><strong>Error Susceptibility</strong>:<ul>
+<li>No robust error handling in scripts; a failed git push (e.g., due to network issues) halts the process silently.</li>
+<li>Misaligned file paths or permissions could break the workflow without clear diagnostics.</li>
+</ul>
+</li>
+<li><strong>Platform Dependency</strong>:<ul>
+<li>Scripts are written for Unix-like systems (e.g., macOS, Linux), requiring adaptation for Windows (e.g., using WSL or rewriting in PowerShell).</li>
+</ul>
+</li>
+<li><strong>No Preview</strong>:<ul>
+<li>Changes are pushed directly to the live site without a local preview step, risking publication of errors or unfinished notes.</li>
+</ul>
+</li>
+</ul>
+<h4 id="detailed-flowchart-description">Detailed Flowchart Description</h4>
+<p>To provide a more illustrative representation, the following is a detailed textual description of the publication process, suitable for generating an image with tools like PlantUML or Draw.io:</p>
+<ul>
+<li><strong>Start</strong>: The process begins when the user decides to publish updated notes.</li>
+<li><strong>Edit Notes</strong>: The user modifies Markdown files or adds images in the Obsidian vault (/Users/rauros/Publish).</li>
+<li><strong>Run Trigger</strong>: The user executes watch.sh from the terminal.</li>
+<li><strong>Invoke Publish Script</strong>: watch.sh calls publish.sh.</li>
+<li><strong>File Copy Stage</strong>:<ul>
+<li><strong>Copy Markdown</strong>: All .md files are copied to /Users/rauros/Publish/mkdocs-site/docs/.</li>
+<li><strong>Copy Assets</strong>: The images/ folder is copied to /Users/rauros/Publish/mkdocs-site/docs/images/.</li>
+</ul>
+</li>
+<li><strong>Site Build</strong>: MkDocs runs mkdocs build --clean, generating the static site in site/.</li>
+<li><strong>Git Workflow</strong>:<ul>
+<li><strong>Stage Changes</strong>: git add . captures all updates in the MkDocs directory.</li>
+<li><strong>Commit</strong>: git commit -m "Update site" records the changes.</li>
+<li><strong>Push</strong>: git push origin main sends the updates to GitHub.</li>
+</ul>
+</li>
+<li><strong>Deployment</strong>: GitHub Pages detects the new commit and updates https://rauros.github.io.</li>
+<li><strong>End</strong>: The process completes, and the site reflects the latest notes
+![[Flowchart Description.png]]</li>
+</ul>
+<h4 id="conclusion">Conclusion</h4>
+<p>This methodology provides a practical, low-friction way to publish Obsidian notes online, balancing ease of use with functional output. While it sacrifices some automation and scalability for simplicity, it effectively meets the needs of a personal notes site. Alternative methodologies were considered but dismissed due to complexity or misalignment with project goals. The flowchart can be rendered as an image for a clearer, more illustrative depiction of the process.</p>
 
 
 
