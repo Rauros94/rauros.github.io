@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>UML Class Diagram - Library Resource Management System - Mis Notas</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "UML Class Diagram - Library Resource Management System";
+        var mkdocs_page_input_path = "UML-Class-Diagram-Library-Resource-Management-System.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Mis Notas
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Test%20Automation/">Test Automation</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">UML Class Diagram - Library Resource Management System</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Mis Notas</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">UML Class Diagram - Library Resource Management System</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><strong>Author:</strong> Antonio Ortiz
+<strong>Date:</strong> 25/04/2025
+<strong>Degree:</strong> Computer Engineering <br />
+<strong>Subject:</strong> Software Engineering<br />
+<strong>Assignment:</strong> Activity 1 – Process Model &amp; Class Design  </p>
+<hr />
+<h2 id="context">🧠 Context</h2>
+<p>This assignment involved the analysis of functional requirements for a university library system and the modeling of its core components using UML class diagrams. The design includes resources (spaces and books), users (students and teachers), and the different types of reservations possible in the system.</p>
+<hr />
+<h2 id="uml-class-diagram">🖼 UML Class Diagram</h2>
+<p>The following UML class diagram represents the designed structure of the library reservation system.</p>
+<p><img alt="UML Diagram – Library Resource Management System" src="../img/uml-classdiagram-en.png" /></p>
+<hr />
+<h2 id="class-descriptions">🧩 Class Descriptions</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Class</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Space</code></td>
+<td>General class representing a physical resource in the library.</td>
+</tr>
+<tr>
+<td><code>ReadingSeat</code></td>
+<td>Subclass of <code>Space</code>.</td>
+</tr>
+<tr>
+<td><code>StudyRoom</code></td>
+<td>Subclass of <code>Space</code>.</td>
+</tr>
+<tr>
+<td><code>User</code></td>
+<td>General class representing any individual who interacts with the library.</td>
+</tr>
+<tr>
+<td><code>Student</code></td>
+<td>Subclass of <code>User</code>, with the attribute <code>degree : string</code>.</td>
+</tr>
+<tr>
+<td><code>Teacher</code></td>
+<td>Subclass of <code>User</code>, with the attribute <code>department : string</code>.</td>
+</tr>
+<tr>
+<td><code>Book</code></td>
+<td>Represents a library book, with attributes <code>fecha : Date</code> and <code>soloLecturaSala : Boolean</code>. Indicates whether the book is restricted to in-room reading only.</td>
+</tr>
+<tr>
+<td><code>SpaceReservation</code></td>
+<td>Represents the reservation of a space (seat or room) by a user, with attribute <code>Date</code>.</td>
+</tr>
+<tr>
+<td><code>RoomReservation</code></td>
+<td>Subclass of <code>SpaceReservation</code>, used for study rooms.</td>
+</tr>
+<tr>
+<td><code>SeatReservation</code></td>
+<td>Subclass of <code>SpaceReservation</code>, used for reading seats.</td>
+</tr>
+<tr>
+<td><code>BookReservation</code></td>
+<td>Represents a book reservation, with attribute <code>RoomOnly : Boolean</code>. Indicates if a room reservation is required to allow the book reservation.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="class-hierarchies-generalization">🔗 Class Hierarchies (Generalization)</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Generalization</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>User</code> &lt;&gt; <code>Student</code></td>
+<td><code>Student</code> is a subclass of <code>User</code>.</td>
+</tr>
+<tr>
+<td><code>User</code> &lt;&gt; <code>Teacher</code></td>
+<td><code>Teacher</code> is a subclass of <code>User</code>.</td>
+</tr>
+<tr>
+<td><code>Space</code> &lt;&gt; <code>StudyRoom</code></td>
+<td><code>StudyRoom</code> is a subclass of <code>Space</code>.</td>
+</tr>
+<tr>
+<td><code>Space</code> &lt;&gt; <code>ReadingSeat</code></td>
+<td><code>ReadingSeat</code> is a subclass of <code>Space</code>.</td>
+</tr>
+<tr>
+<td><code>SpaceReservation</code> &lt;&gt; <code>RoomReservation</code></td>
+<td><code>RoomReservation</code> is a subclass of <code>SpaceReservation</code>.</td>
+</tr>
+<tr>
+<td><code>SpaceReservation</code> &lt;&gt; <code>SeatReservation</code></td>
+<td><code>SeatReservation</code> is a subclass of <code>SpaceReservation</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="class-associations">🔗 Class Associations</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Association</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Student</code> &lt;&gt; <code>RoomReservation</code></td>
+<td>Students can create room reservations.</td>
+</tr>
+<tr>
+<td><code>Teacher</code> &lt;&gt; <code>RoomReservation</code></td>
+<td>Teachers can create room reservations.</td>
+</tr>
+<tr>
+<td><code>User</code> &lt;&gt; <code>SeatReservation</code></td>
+<td>Users can reserve reading seats.</td>
+</tr>
+<tr>
+<td><code>User</code> &lt;&gt; <code>BookReservation</code></td>
+<td>Users can reserve books.</td>
+</tr>
+<tr>
+<td><code>SeatReservation</code> &lt;&gt; <code>ReadingSeat</code></td>
+<td>Each seat reservation is linked to a specific reading seat.</td>
+</tr>
+<tr>
+<td><code>RoomReservation</code> &lt;&gt; <code>StudyRoom</code></td>
+<td>Each room reservation is linked to a specific study room.</td>
+</tr>
+<tr>
+<td><code>BookReservation</code> &lt;&gt; <code>Book</code></td>
+<td>Each book reservation is linked to a specific book.</td>
+</tr>
+<tr>
+<td><code>BookReservation</code> &lt;&gt; <code>SeatReservation</code></td>
+<td>Book reservations validate the presence of an active seat reservation to allow access to the requested book.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary">✅ Summary</h2>
+<p>This UML class diagram captures a simplified model for a university library resource booking system. It applies object-oriented design principles such as generalization and composition and supports potential rule extension based on user type or resource restrictions.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Test%20Automation/" class="btn btn-neutral float-left" title="Test Automation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Test%20Automation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
